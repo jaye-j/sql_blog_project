@@ -21,6 +21,7 @@ router.get("/editblogs", (req, res) => {
 router.use(bodyParser.urlencoded({ extended: false }));
 
 router.post("/editblogs", (req, res) => {
+  console.log(req.body);
   let title = req.body.title;
   let author_id = req.body.author_id;
   let category_id = parseInt(req.body.category_id);
