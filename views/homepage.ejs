@@ -13,6 +13,15 @@
     </nav>
     <h1>HOMEPAGE</h1>
 
-    
+    <% blogs.forEach(record => { %>
+
+        <h1> <%= record.title %></h1>
+
+        <h2> <%= record.name %></h2>
+
+        <h3> <%= record.date_pub %></h3>
+
+
+    <% }) %>
 </body>
 </html>
