@@ -27,11 +27,11 @@ router.post("/editblogs", (req, res) => {
   let body = req.body.body;
   let date_pub = req.body.date_pub;
   db.none(
-    "INSERT INTO restaurants (title, author_id, category_id, body, date_pub) VALUES ($1, $2, $3, $4, $5, $6)",
+    "INSERT INTO blogs (title, author_id, category_id, body, date_pub) VALUES ($1, $2, $3, $4, $5)",
     [title, author_id, category_id, body, date_pub]
   )
     .then(() => {
-      res.redirect("/blogs");
+      res.redirect("/");
     })
     .catch(error => {
       res.send(error);
