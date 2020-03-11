@@ -27,7 +27,7 @@ router.post("/editblogs", (req, res) => {
   let author_id = req.body.author_id;
   let category_id = parseInt(req.body.category_id);
   let body = req.body.body;
-  let date_pub = req.body.date;
+  let date_pub = req.body.date_pub;
   db.none(
     "INSERT INTO restaurants (title, author_id, category_id, body, date_pub) VALUES ($1, $2, $3, $4, $5, $6)",
     [title, author_id, category_id, body, date_pub]
