@@ -8,11 +8,25 @@
 <body>
     <nav>
         <a href="/">homepage</a>
-        <a href="/blogs">blogs</a>
         <a href="/editblogs">editblogs</a>
     </nav>
-    <h1>BLOGS</h1>
+    <h1>BLOG</h1>
 
+    <% blog.forEach(record => { %>
+
+            <h1> <%= record.title %></h1>
+
+            <h5> date published: <%= record.date_pub %></h5>
+
+            <h4> <%= record.body %></h4>
+
+            <h2> author: <%= record.name %></h2>
+
+            <img height="200px" src="<%= record.imageurl %>">
+
+            <p> <%= record.biography %></p>
+
+    <% }) %>
     
 </body>
 </html>

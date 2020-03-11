@@ -8,20 +8,22 @@
 <body>
     <nav>
         <a href="/">homepage</a>
-        <a href="/blogs">blogs</a>
-        <a href="/editblogs">editblogs</a>
+        <a href="/editblogs">add blog</a>
     </nav>
     <h1>HOMEPAGE</h1>
 
     <% blogs.forEach(record => { %>
 
-        <h1> <%= record.title %></h1>
+        <p>----------------------------------------------------------------------------------------</p>
 
-        <h2> <%= record.name %></h2>
+        <a href="/blogs/<%= record.id %>">
+            <h1> <%= record.title %></h1>
 
-        <h3> <%= record.date_pub %></h3>
+            <h2> <%= record.name %></h2>
 
+            <h5> <%= record.date_pub %></h5>
 
+        </a>
     <% }) %>
 </body>
 </html>
