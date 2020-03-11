@@ -4,14 +4,12 @@ let bodyParser = require("body-parser");
 let db = require("../models/database");
 
 router.get("/editblogs", (req, res) => {
-  db.query("SELECT * FROM categories", (err, cats) => {
-    if (err) {
-      console.log(err);
-    }
-    db.query("SELECT * FROM authors", (err, auths) => {
-      if (err) {
-        console.log(err);
-      }
+  let cats = "";
+  let auths = "";
+  db.query("SELECT * FROM categories").then(results => {
+    cats = results;
+    db.query("SELECT * FROM authors").then(results2 => {
+      auths = results2;
       res.render("editblog", {
         authors: auths,
         categories: cats
