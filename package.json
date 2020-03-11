@@ -1,7 +1,6 @@
 {
   "name": "sql_blog_project",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,5 +21,6 @@
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "pg-promise": "^10.4.4"
-  }
+  },
+  "description": ""
 }
