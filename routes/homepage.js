@@ -3,10 +3,16 @@ const router = express.Router();
 let db = require("../models/database");
 
 router.get("/", (req, res) => {
+  let blogs = "";
+  let auths = "";
   db.query("SELECT * FROM blogs").then(results => {
-    //results is an array of objects
-    res.render("homepage", {
-      blogs: results
+    blogs = results;
+    db.query("SELECT * FROM authors").then(results2 => {
+      auths = results2;
+      res.render("homepage", {
+        authors: auths,
+        blogs: blogs
+      });
     });
   });
 });
