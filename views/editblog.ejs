@@ -13,6 +13,38 @@
     </nav>
     <h1>Edit Blog</h1>
 
+    <form action="/editblog" method="POST">
+
+        author: <select name="author_id" id="">
+                    
+                    <option>-select author-</option>
+
+                    <% authors.forEach((record) => { %>
+                        <option value="<%= record.id %>"><%= record.name %></option>
+
+                    <% }) %>
+
+                </select><br>
+
+        title: <input type="text" name="title" placeholder="title"><br>
+
+        category: <select name="category_id" id="">
+                    
+            <option>-select category-</option>
+
+            <% categories.forEach((record) => { %>
+                <option value="<%= record.id %>"><%= record.name %></option>
+
+            <% }) %>
+
+        </select><br>
+
+        date published: <input type="date" data-date="" data-date-format="YYYY-MM-DD" name="date_pub" placeholder="price"><br>
+
+        body: <input type="textbox" name="body"><br>
+
+        <button type="submit">submit edit</button>
+    </form>
     
 </body>
 </html>
