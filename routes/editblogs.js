@@ -6,16 +6,21 @@ let db = require("../models/database");
 router.get("/editblogs", (req, res) => {
   let cats = "";
   let auths = "";
-  db.query("SELECT * FROM categories").then(results => {
-    cats = results;
-    db.query("SELECT * FROM authors").then(results2 => {
-      auths = results2;
-      res.render("editblog", {
-        authors: auths,
-        categories: cats
+  db.query("SELECT * FROM categories")
+    .then(results => {
+      cats = results;
+      db.query("SELECT * FROM authors").then(results2 => {
+        auths = results2;
+        res.render("editblog", {
+          authors: auths,
+          categories: cats
+        });
       });
+    })
+    .catch(error => {
+      console.log(error);
+      res.send("error.");
     });
-  });
 });
 
 router.use(bodyParser.urlencoded({ extended: false }));
