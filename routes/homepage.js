@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
-let db = require("../models/database");
+// let db = require("../models/database");
+let db = require("./models");
 
 router.get("/", (req, res) => {
   let blogs = "";
