@@ -19,9 +19,9 @@
         <a href="/blogs/<%= record.id %>">
             <h1> <%= record.title %></h1>
 
-            <h2> <%= record.name %></h2>
+            <h2>author: <%= authors[record.author_id - 1].name %></h2>
 
-            <h5> <%= record.date_pub %></h5>
+            <h5>date published: <%= record.date_pub %></h5>
 
         </a>
     <% }) %>
