@@ -14,9 +14,9 @@
 
     <% blogs.forEach(record => { %>
 
-        <p>----------------------------------------------------------------------------------------</p>
-
-        <a href="/blogs/<%= record.id %>">
+        <p>----------------------------------------------------------------------------------------------------</p>
+        <div style="width: 500px; background-color: whitesmoke; border: black solid 2px; border-radius: 10px; padding: 10px;">
+        <a style="text-decoration: none;" href="/blogs/<%= record.id %>">
             <h1> <%= record.title %></h1>
 
             <h2>category: <%= categories[record.category_id - 1].name %></h2>
@@ -26,6 +26,7 @@
             <h5>date published: <%= record.date_pub %></h5>
 
         </a>
+    </div>
     <% }) %>
 </body>
 </html>
