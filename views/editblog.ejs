@@ -1,49 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <nav>
-        <a href="/">homepage</a>
-        <a href="/editblogs">editblogs</a>
+      <a href="/">homepage</a>
+      <a href="/editblogs">editblogs</a>
     </nav>
     <h1>Edit Blog</h1>
 
     <form action="/editblogs" method="POST">
+      author:
+      <select name="author_id" id="">
+        <option>-select author-</option>
 
-        author: <select name="author_id" id="">
-                    
-                    <option>-select author-</option>
+        <% authors.forEach((record) => { %>
+        <option value="<%= record.id %>"><%= record.name %></option>
 
-                    <% authors.forEach((record) => { %>
-                        <option value="<%= record.id %>"><%= record.name %></option>
+        <% }) %> </select
+      ><br />
 
-                    <% }) %>
+      title: <input type="text" name="title" placeholder="title" /><br />
 
-                </select><br>
+      category:
+      <select name="category_id" id="">
+        <option>-select category-</option>
 
-        title: <input type="text" name="title" placeholder="title"><br>
+        <% categories.forEach((record) => { %>
+        <option value="<%= record.id %>"><%= record.name %></option>
 
-        category: <select name="category_id" id="">
-                    
-            <option>-select category-</option>
+        <% }) %> </select
+      ><br />
 
-            <% categories.forEach((record) => { %>
-                <option value="<%= record.id %>"><%= record.name %></option>
+      body:<br />
+      <textarea type="text" name="body" rows="15" cols="35"></textarea><br />
 
-            <% }) %>
-
-        </select><br>
-
-        date published: <input type="text" name="date_pub" placeholder="YYYY-MM-DD"><br>
-
-        body:<br> <textarea type="text" name="body" rows="15" cols="35"></textarea><br>
-
-        <button type="submit">submit edit</button>
+      <button type="submit">submit edit</button>
     </form>
-    
-</body>
+  </body>
 </html>
